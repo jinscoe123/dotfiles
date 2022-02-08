@@ -1,0 +1,24 @@
+# Source system settings for GNU readline.
+$include /etc/inputrc
+ 
+ 
+# Use vi-mode.
+set editing-mode vi
+
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"
+set vi-ins-mode-string "\1\e[6 q\2"
+
+$if mode=vi
+    set keymap vi-command
+ 
+    # Shortcuts for Vi command mode
+    "\C-x\C-r": re-read-init-file
+    "\C-l": "!echo -ne \047\\0033\\0143\047\r"
+ 
+    set keymap vi-insert
+ 
+    # Shortcuts for Vi insert mode
+    "\C-x\C-r": re-read-init-file
+    "\C-l": "!echo -ne \047\\0033\\0143\047\r"
+$endif

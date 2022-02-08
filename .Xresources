@@ -1,0 +1,117 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                              !
+! Install Dependencies (Arch):                                                 !
+!                                                                              !
+! $ yay -S rxvt-unicode-truecolor                                              !
+! $ pacman -S urxvt-perls libpulse firefox                                     !
+! $ yay -S urxvt-fullscreen urxvt-resize-font-git otf-hermit ubuntu-sounds     !
+!                                                                              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+! Urxvt Settings
+
+URxvt.geometry: 120x30
+URxvt.borderLess: true
+URxvt.internalBorder: 16
+
+URxvt.loginShell: false
+
+URxvt.scrollTtyKeypress: true
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyOutput: false
+URxvt.skipScroll: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+
+URxvt.fading: 30
+
+URxvt.visualBell: false
+URxvt.urgentOnBell: true
+
+URxvt.font: xft:MesloLGS NF:style=Regular:size=11
+URxvt.boldFont: xft:MesloLGS NF:style=Bold:size=11
+URxvt.italicFont: xft:MesloLGS NF:style=Italic:size=11
+URxvt.boldItalicFont: xft:MesloLGS NF:style=Bold Italic:size=11
+
+URxvt.lineSpace: 0
+URxvt.letterSpace: 0
+
+URxvt.saveLines: 0
+
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.cursorColor: #FF8939
+
+! NOTE: This is necessary for enabling true transparency.
+URxvt.depth: 32
+
+
+! Urxvt Color Scheme
+! See here: http://dotshare.it/dots/87/
+URxvt.foreground:  #D7D0C7
+URxvt.background:  [95]#151515
+
+! BLK
+URxvt.color0:      #101010
+URxvt.color8:      #404040
+! RED
+URxvt.color1:      #E84F4F
+URxvt.color9:      #D23D3D
+! GRN
+URxvt.color2:      #B8D68C
+URxvt.color10:     #A0CF5D
+! YEL
+URxvt.color3:      #E1AA5D
+URxvt.color11:     #F39D21
+! BLU
+URxvt.color4:      #7DC1CF
+URxvt.color12:     #4E9FB1
+! MAG
+URxvt.color5:      #9B64FB
+URxvt.color13:     #8542FF
+! CYN
+URxvt.color6:      #6D878D
+URxvt.color14:     #42717B
+! WHT
+URxvt.color7:      #DDDDDD
+URxvt.color15:     #DDDDDD
+
+URxvt.colorBD:     #FFFFFF
+URxvt.colorIT:     #FFFFFF
+URxvt.colorUL:     #FFFFFF
+
+
+! NOTE: For Ctrl-Shift bindings to work, we must disable the default binding.
+! See here: https://wilmer.gaa.st/blog/archives/36-rxvt-unicode-and-ISO-14755-mode.html
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+! Urxvt Perl Extensions
+URxvt.perl-ext-common: default,bell-command,clipboard,url-select,fullscreen,resize-font
+
+! Bell-command
+URxvt.bell-command: paplay /usr/share/sounds/ubuntu/stereo/bell.ogg
+
+! Clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.clipboard.autocopy: true
+
+! Url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.autocopy: false
+URxvt.url-select.button: 1
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
+
+! Fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Resize-font
+URxvt.keysym.C-minus: resize-font:smaller
+URxvt.keysym.C-equal: resize-font:bigger
+URxvt.keysym.C-0: resize-font:reset
